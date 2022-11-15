@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory.h>
 using namespace std;
 class Solution {
 public:
@@ -18,15 +19,18 @@ public:
         return ans%mod;;
     }
  
-    const int MOD = 1e9 + 7;//官方解法
     int peopleAwareOfSecret1(int n, int delay, int forget) {
-        int sum[n + 1];
-        sum[0] = 0, sum[1] = 1;
-        for (int i = 2; i <= n; ++i) {
-            int f = (sum[max(i - delay, 0)] - sum[max(i - forget, 0)]) % MOD;
-            sum[i] = (sum[i - 1] + f) % MOD;
+        int f[n];memset(f,0,sizeof(f));
+        int cntb=0;f[0]=1;
+        for(int i=0;i<n;i++)
+        {
+            if(i+delay>=n) cntb=(cntb+f[i])%mod;
+            for(int j=i+delay;j<min(i+forget,n);j++)
+            {
+                f[j]=(f[j]+f[i])%mod;
+            }
         }
-        return ((sum[n] - sum[max(n - forget, 0)]) % MOD + MOD) % MOD; // 防止结果为负数
+        return (f[n-1]+cntb)%mod;
     }
 };
 
