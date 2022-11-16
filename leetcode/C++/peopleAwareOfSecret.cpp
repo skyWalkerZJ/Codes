@@ -38,5 +38,5 @@ public:
 int main()
 {
     Solution s;
-    cout<<s.peopleAwareOfSecret(684,18,496);
+    cout<<s.peopleAwareOfSecret1(6,2,4);
 }
