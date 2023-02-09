@@ -24,6 +24,7 @@ public:
                 left++;
             }
         }
+        
         while(sum>=target)
         {
             ans=min(ans,right-left);
