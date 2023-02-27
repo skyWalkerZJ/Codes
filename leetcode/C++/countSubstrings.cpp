@@ -33,6 +33,35 @@ public:
 
         return ans;
     }
+
+    int countSubstrings1(string s)
+    {
+        //奇偶处理
+        string t="$#";int ans=0;
+        for(const char c:s)
+        {
+            t+=c;
+            t+="#";
+        }
+        t+="!";
+        int n=t.length();
+        vector<int> f(n);int last=-1;int mid=-1;
+        for(int i=1;i<n-1;i++)
+        {   
+            //初始化
+            f[i]=i<last?min(f[2*mid-i],last-i+1):1;
+            //中心扩展
+            while(t[i+f[i]]==t[i-f[i]]) ++f[i];
+            //维护回文串的右端点以及对应的回文中心
+            if(i+f[i]>last) 
+            {
+                last=i+f[i]-1;
+                mid=i;
+            }
+            ans+=(f[i]/2);
+        }
+        return ans;
+    }
 };
 int main()
 {
