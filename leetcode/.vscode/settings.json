@@ -4,6 +4,7 @@
         "string": "cpp",
         "vector": "cpp",
         "new": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "numeric": "cpp"
     }
 }
