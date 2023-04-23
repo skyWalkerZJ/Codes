@@ -9,5 +9,4 @@ int main()
     printf("%d",arr1[10]);
     char str[]="123456789";
     if(dstStr==NULL) printf("str is NULL");
-    
 }
