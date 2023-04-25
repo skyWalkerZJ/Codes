@@ -6,6 +6,7 @@
         "new": "cpp",
         "*.tcc": "cpp",
         "numeric": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "unordered_set": "cpp"
     }
 }
