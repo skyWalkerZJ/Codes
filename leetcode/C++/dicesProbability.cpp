@@ -14,6 +14,7 @@ public:
                 {
                     temp[i+j]+=dp[i]*(1.0/6.0);
                 }
+                
             }
             dp=temp;
         }
