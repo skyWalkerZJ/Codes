@@ -9,7 +9,7 @@ public:
         {
             if(s[i]==' ') continue;
             int start=i;
-            while(s[i]!=' ')
+            while(i<n&&s[i]!=' ')
             {
                 i++;
             }
